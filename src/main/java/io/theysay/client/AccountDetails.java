@@ -1,7 +1,6 @@
 package io.theysay.client;
 
 public class AccountDetails {
-
     private String username;
     private String password;
 
@@ -20,6 +19,4 @@ public class AccountDetails {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }
