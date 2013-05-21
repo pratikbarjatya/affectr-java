@@ -1,8 +1,7 @@
-TheySay affectr-java-client
-===========================
+TheySay Affectr API Java Client
+===============================
 
 The TheySay Java client provides a simple interface to the TheySay API.
-
 You can sign up for a TheySay account at http://theysay.io.
 
 ### Requirements
@@ -19,6 +18,12 @@ Add this dependency to your project's POM:
       <version>1.0.0</version>
     </dependency>
 
+### Using with SBT
+
+Add this dependency to your .sbt or build file:
+
+    "io.theysay" % "affectr-java" % "1.0.0"
+
 ### Getting Started
 
 First, import the required classes:
@@ -34,15 +39,15 @@ Affectr.accountDetails.setUsername("your username");
 Affectr.accountDetails.setPassword("your password");
 ```
 
-Next, call any classification task on the Affectr class, for example:
+Next, call any classification task with your text on the Affectr API class, for example:
 
 ```java
 // sentiment
-System.out.println(Affectr.api.classifySentiment("You'll love this client!").getSentiment().getPolarity());
-System.out.println(Affectr.api.classifyEntitySentiment("You'll love this client!")[0].getSentiment().getPolarity());
+String sentiment = Affectr.api.classifySentiment("...").getSentiment().getPolarity();
+String firstEntitySentiment = Affectr.api.classifyEntitySentiment("...")[0].getSentiment().getPolarity();
 
 // speculation
-System.out.println(Affectr.api.classifySpeculation("I might buy an ipad")[0].getSpeculationType());
+String speculation = Affectr.api.classifySpeculation("...")[0].getSpeculationType());
 ```
 
 ### Usage
