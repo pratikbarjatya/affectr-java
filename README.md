@@ -1,7 +1,8 @@
 TheySay Affectr API Java Client
 ===============================
 
-The TheySay Java client provides a simple interface to the TheySay API.
+The TheySay Java client provides a simple interface to the [TheySay API](http://api.theysay.io).
+
 You can sign up for a TheySay account at http://theysay.io.
 
 ### Requirements
@@ -49,7 +50,3 @@ String firstEntitySentiment = Affectr.api.classifyEntitySentiment("...")[0].getS
 // speculation
 String speculation = Affectr.api.classifySpeculation("...")[0].getSpeculationType());
 ```
-
-### Usage
-
-Refer to the [documentation](https://theysay.io/docs).
