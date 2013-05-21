@@ -5,7 +5,20 @@ public class Example {
         Affectr.accountDetails.setUsername("your username");
         Affectr.accountDetails.setPassword("your password");
 
-        System.out.println(Affectr.api.analyseSentiment("this is a test").getSentiment().getLabel());
-        System.out.println(Affectr.api.analyseSpeculation("I might buy an ipad")[0].getSpeculationType());
+        // sentiment
+        System.out.println(Affectr.api.classifySentiment("You'll love this client!").getSentiment().getPolarity());
+        System.out.println(Affectr.api.classifyEntitySentiment("You'll love this client!")[0].getSentiment().getPolarity());
+
+        // speculation
+        System.out.println(Affectr.api.classifySpeculation("I might buy an ipad")[0].getSpeculationType());
+
+        // comparison
+        //System.out.println(Affectr.api.classifyComparison("Ebay is better than PayPal")[0].getComparisonType());
+
+        // named entities
+        System.out.println(Affectr.api.getNamedEntities("I might buy an ipad")[0].getHead());
+
+        // part-of-speech tagging
+        System.out.println(Affectr.api.posTag("I might buy an ipad")[0].getPosTaggedWord());
     }
 }

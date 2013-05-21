@@ -8,6 +8,10 @@ public class SentimentValues implements Serializable {
     private double negative;
     private double neutral;
 
+    public String getPolarity() {
+        return label;
+    }
+
     public String getLabel() {
         return label;
     }
