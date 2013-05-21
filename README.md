@@ -51,6 +51,10 @@ String firstEntitySentiment = Affectr.api.classifyEntitySentiment("...")[0].getS
 String speculation = Affectr.api.classifySpeculation("...")[0].getSpeculationType());
 ```
 
+### Using or moving to Scala?
+
+Try our [Scala client](https://github.com/theysay/affectr-scala-client).
+
 For more information, please visit http://docs.theysay.apiary.io/. This client is under development.
 
 Copyright 2013 TheySay Ltd. All rights reserved.
