@@ -23,20 +23,20 @@ Add this dependency to your project's POM:
 
 First, import the required classes:
 
-```
+```java
 import io.theysay.client.Affectr;
 ```
 
 Next, set your account details:
 
-```
+```java
 Affectr.accountDetails.setUsername("your username");
 Affectr.accountDetails.setPassword("your password");
 ```
 
 Next, call any classification task on the Affectr class, for example:
 
-```
+```java
 // sentiment
 System.out.println(Affectr.api.classifySentiment("You'll love this client!").getSentiment().getPolarity());
 System.out.println(Affectr.api.classifyEntitySentiment("You'll love this client!")[0].getSentiment().getPolarity());
