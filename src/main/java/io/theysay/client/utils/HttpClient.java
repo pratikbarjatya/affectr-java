@@ -25,7 +25,7 @@ public class HttpClient {
 
     public static final String CONTENT_TYPE = "application/json";
 
-    public static final String USER_AGENT = format("theysay-java/%s", "1.0.0");
+    public static final String USER_AGENT = format("affectr-java/%s", "1.0.0");
 
     public static final Map<String, String> BASE_HEADERS = headers();
 
