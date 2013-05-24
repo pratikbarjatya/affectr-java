@@ -8,15 +8,7 @@ public class SimpleSentiment {
         return sentiment;
     }
 
-    public void setSentiment(SentimentValues sentiment) {
-        this.sentiment = sentiment;
-    }
-
     public Integer getWordCount() {
         return wordCount;
-    }
-
-    public void setWordCount(Integer wordCount) {
-        this.wordCount = wordCount;
     }
 }

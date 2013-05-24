@@ -33,10 +33,22 @@ public class Api {
         this.accountDetails = accountDetails;
     }
 
+    /**
+     * Classifies sentiment for the passed-in text.
+     *
+     * @param text the text to classify
+     * @return a SimpleSentiment object
+     */
     public SimpleSentiment classifySentiment(String text) {
         return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text))), SimpleSentiment.class);
     }
 
+    /**
+     * Classifies sentiment for each detected entity in the passed-in text.
+     *
+     * @param text the text to classify
+     * @return an EntitySentiment object for each entity
+     */
     public EntitySentiment[] classifyEntitySentiment(String text) {
         return classifyEntitySentiment(text, null, null);
     }

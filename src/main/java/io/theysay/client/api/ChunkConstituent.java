@@ -8,15 +8,7 @@ public class ChunkConstituent {
         return chunk;
     }
 
-    public void setChunk(Chunk chunk) {
-        this.chunk = chunk;
-    }
-
     public ChunkHead getHead() {
         return head;
-    }
-
-    public void setHead(ChunkHead head) {
-        this.head = head;
     }
 }

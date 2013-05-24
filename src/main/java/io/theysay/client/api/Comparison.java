@@ -11,39 +11,19 @@ public class Comparison implements HasStartEnd, HasText {
         return start;
     }
 
-    public void setStart(int start) {
-        this.start = start;
-    }
-
     public int getEnd() {
         return end;
-    }
-
-    public void setEnd(int end) {
-        this.end = end;
     }
 
     public int getSentenceIndex() {
         return sentenceIndex;
     }
 
-    public void setSentenceIndex(int sentenceIndex) {
-        this.sentenceIndex = sentenceIndex;
-    }
-
     public String getComparisonType() {
         return comparisonType;
     }
 
-    public void setComparisonType(String comparisonType) {
-        this.comparisonType = comparisonType;
-    }
-
     public String getText() {
         return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 }
