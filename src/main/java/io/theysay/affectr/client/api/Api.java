@@ -138,7 +138,7 @@ public class Api {
         return fromJson(httpClient.post(Path.CHUNK_PARSE, headers(), toJson(new Request(text))), ChunkConstituent[].class);
     }
 
-    public Version getAPIVersion() {
+    public Version getVersion() {
         return fromJson(httpClient.get(Path.VERSION, headers()), Version.class);
     }
 

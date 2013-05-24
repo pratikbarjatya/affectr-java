@@ -7,7 +7,7 @@ public class Example {
         AffectR.accountDetails.setUsername("your username");
         AffectR.accountDetails.setPassword("your password");
 
-        Version version = AffectR.api.getAPIVersion();
+        Version version = AffectR.api.getVersion();
         System.out.println(String.format("TheySay AffectR API version %s, built on %s", version.getVersion(), version.getBuildDate()));
 
         // sentiment

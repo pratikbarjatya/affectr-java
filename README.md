@@ -48,7 +48,19 @@ String sentiment = AffectR.api.classifySentiment("...").getSentiment().getPolari
 String firstEntitySentiment = AffectR.api.classifyEntitySentiment("...")[0].getSentiment().getPolarity();
 
 // speculation
-String speculation = AffectR.api.classifySpeculation("...")[0].getSpeculationType());
+String speculation = AffectR.api.classifySpeculation("...")[0].getSpeculationType();
+
+// intent
+String intent = AffectR.api.classifyIntent("...")[0].getIntentType();
+
+// risk
+String risk = AffectR.api.classifyRisk("...")[0].getRiskType();
+
+// named entities
+String head = AffectR.api.getNamedEntities("...")[0].getHead();
+
+// part-of-speech tagging
+String posTag = AffectR.api.posTag("...")[0].getPosTaggedWord();
 ```
 
 ### Using or moving to Scala?
