@@ -29,7 +29,7 @@ public class HttpClient {
 
     public static final Map<String, String> BASE_HEADERS = headers();
 
-    protected enum RequestMethod {GET, POST, PUT}
+    protected enum RequestMethod {GET, POST, PUT, DELETE}
 
     protected int connectTimeout = 30000; // 30 second default
 
@@ -48,6 +48,10 @@ public class HttpClient {
 
     public String put(String url, Map<String, String> headers, String payload) {
         return request(RequestMethod.PUT, url, headers, payload);
+    }
+
+    public String delete(String url, Map<String, String> headers, String payload) {
+        return request(RequestMethod.DELETE, url, headers, payload);
     }
 
     public static String url(String url, Map<String, String> params) {

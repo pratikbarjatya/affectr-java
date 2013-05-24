@@ -22,6 +22,7 @@ public class Api {
         public static final String COMPARISON = format("%s/comparison", BASE);
         public static final String NAMED_ENTITY = format("%s/namedentity", BASE);
         public static final String POS_TAG = format("%s/postag", BASE);
+        public static final String CHUNK_PARSE = format("%s/chunkparse", BASE);
     }
 
     protected HttpClient httpClient = HttpClient.DEFAULT;
@@ -70,6 +71,10 @@ public class Api {
 
     public PosTag[] posTag(String text) {
         return fromJson(httpClient.post(Path.POS_TAG, headers(), toJson(new Request(text))), PosTag[].class);
+    }
+
+    public ChunkConstituent[] chunkParse(String text) {
+        return fromJson(httpClient.post(Path.CHUNK_PARSE, headers(), toJson(new Request(text))), ChunkConstituent[].class);
     }
 
     protected Map<String, String> headers() {

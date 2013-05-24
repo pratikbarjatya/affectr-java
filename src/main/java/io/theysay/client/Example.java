@@ -20,5 +20,8 @@ public class Example {
 
         // part-of-speech tagging
         System.out.println(Affectr.api.posTag("I might buy an ipad")[0].getPosTaggedWord());
+
+        // chunk parse
+        System.out.println(Affectr.api.chunkParse("This is a test")[0].getHead().getPosTag());
     }
 }
