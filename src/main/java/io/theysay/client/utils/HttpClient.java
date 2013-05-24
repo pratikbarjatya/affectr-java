@@ -13,9 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.net.ssl.HttpsURLConnection;
-
-import io.theysay.client.exceptions.AffectrException;
+import io.theysay.client.exceptions.AffectRException;
 
 public class HttpClient {
 
@@ -94,15 +92,15 @@ public class HttpClient {
                 conn.setRequestMethod("PUT");
                 writeOutput(conn, payload);
             } else {
-                throw new AffectrException(format("Unsupported Request Method [method: %s, url: %s]", method, url));
+                throw new AffectRException(format("Unsupported Request Method [method: %s, url: %s]", method, url));
             }
             int statusCode = conn.getResponseCode(); //triggers the request
             if (statusCode < 200 || statusCode >= 300) {
-                throw new AffectrException(url + " with status " + statusCode + " = " + getResponse(conn.getErrorStream()));
+                throw new AffectRException(url + " with status " + statusCode + " = " + getResponse(conn.getErrorStream()));
             }
             return getResponse(conn.getInputStream());
         } catch (IOException ex) {
-            throw new AffectrException(format("Failed request [url: %s]", url), ex);
+            throw new AffectRException(format("Failed request [url: %s]", url), ex);
         } finally {
             if (conn != null) {
                 conn.disconnect();

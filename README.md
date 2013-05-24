@@ -1,9 +1,9 @@
-TheySay Affectr API Java Client
+TheySay AffectR API Java Client
 ===============================
 
-The TheySay Affectr API Java client provides a simple interface to the [TheySay API](http://api.theysay.io).
+The TheySay AffectR API Java client provides a simple interface to the [TheySay API](http://api.theysay.io).
 
-You can sign up for a TheySay account at http://theysay.io.
+You can sign up for a TheySay AffectR API account at http://theysay.io.
 
 ### Requirements
 
@@ -30,25 +30,25 @@ Add this dependency to your .sbt or build file:
 First, import the required classes:
 
 ```java
-import io.theysay.client.Affectr;
+import io.theysay.client.AffectR;
 ```
 
 Next, set your account details:
 
 ```java
-Affectr.accountDetails.setUsername("your username");
-Affectr.accountDetails.setPassword("your password");
+AffectR.accountDetails.setUsername("your username");
+AffectR.accountDetails.setPassword("your password");
 ```
 
-Next, call any classification task with your text on the Affectr API class, for example:
+Next, call any classification task with your text on the AffectR API class, for example:
 
 ```java
 // sentiment
-String sentiment = Affectr.api.classifySentiment("...").getSentiment().getPolarity();
-String firstEntitySentiment = Affectr.api.classifyEntitySentiment("...")[0].getSentiment().getPolarity();
+String sentiment = AffectR.api.classifySentiment("...").getSentiment().getPolarity();
+String firstEntitySentiment = AffectR.api.classifyEntitySentiment("...")[0].getSentiment().getPolarity();
 
 // speculation
-String speculation = Affectr.api.classifySpeculation("...")[0].getSpeculationType());
+String speculation = AffectR.api.classifySpeculation("...")[0].getSpeculationType());
 ```
 
 ### Using or moving to Scala?

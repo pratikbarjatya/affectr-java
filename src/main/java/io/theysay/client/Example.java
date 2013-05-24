@@ -1,27 +1,34 @@
 package io.theysay.client;
 
+import io.theysay.client.api.Version;
+
 public class Example {
     public static void main(String[] args) {
-        Affectr.accountDetails.setUsername("your username");
-        Affectr.accountDetails.setPassword("your password");
+        AffectR.accountDetails.setUsername("your username");
+        AffectR.accountDetails.setPassword("your password");
+
+        Version version = AffectR.api.getAPIVersion();
+        System.out.println(String.format("TheySay AffectR API version %s, built on %s", version.getVersion(), version.getBuildDate()));
 
         // sentiment
-        System.out.println(Affectr.api.classifySentiment("You'll love this client!").getSentiment().getPolarity());
-        System.out.println(Affectr.api.classifyEntitySentiment("You'll love this client!")[0].getSentiment().getPolarity());
+        System.out.println(AffectR.api.classifySentiment("You'll love this client!").getSentiment().getPolarity());
+        System.out.println(AffectR.api.classifyEntitySentiment("You'll love this client!")[0].getSentiment().getPolarity());
+        System.out.println(AffectR.api.classifyAggregatedEntitySentiment("You'll love this client")[0].getCategory());
+        System.out.println(AffectR.api.classifyTaxonomyEntitySentiment("You'll love this client")[0].getCategory());
 
         // speculation
-        System.out.println(Affectr.api.classifySpeculation("I might buy an ipad")[0].getSpeculationType());
+        System.out.println(AffectR.api.classifySpeculation("I might buy an ipad")[0].getSpeculationType());
 
         // comparison
-        //System.out.println(Affectr.api.classifyComparison("Ebay is better than PayPal")[0].getComparisonType());
+        //System.out.println(AffectR.api.classifyComparison("Ebay is better than PayPal")[0].getComparisonType());
 
         // named entities
-        System.out.println(Affectr.api.getNamedEntities("I might buy an ipad")[0].getHead());
+        System.out.println(AffectR.api.getNamedEntities("I might buy an ipad")[0].getHead());
 
         // part-of-speech tagging
-        System.out.println(Affectr.api.posTag("I might buy an ipad")[0].getPosTaggedWord());
+        System.out.println(AffectR.api.posTag("I might buy an ipad")[0].getPosTaggedWord());
 
         // chunk parse
-        System.out.println(Affectr.api.chunkParse("This is a test")[0].getHead().getPosTag());
+        System.out.println(AffectR.api.chunkParse("This is a test")[0].getHead().getPosTag());
     }
 }

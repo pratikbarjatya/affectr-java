@@ -14,15 +14,16 @@ import static java.lang.String.format;
 public class Api {
 
     public interface Path {
-        public static final String BASE = "http://api.theysay.io/v1";
-        public static final String SENTIMENT = format("%s/sentiment", BASE);
-        public static final String SPECULATION = format("%s/speculation", BASE);
-        public static final String INTENT = format("%s/intent", BASE);
-        public static final String RISK = format("%s/risk", BASE);
-        public static final String COMPARISON = format("%s/comparison", BASE);
-        public static final String NAMED_ENTITY = format("%s/namedentity", BASE);
-        public static final String POS_TAG = format("%s/postag", BASE);
-        public static final String CHUNK_PARSE = format("%s/chunkparse", BASE);
+        public static final String BASE = "http://api.theysay.io";
+        public static final String SENTIMENT = format("%s/v1/sentiment", BASE);
+        public static final String SPECULATION = format("%s/v1/speculation", BASE);
+        public static final String INTENT = format("%s/v1/intent", BASE);
+        public static final String RISK = format("%s/v1/risk", BASE);
+        public static final String COMPARISON = format("%s/v1/comparison", BASE);
+        public static final String NAMED_ENTITY = format("%s/v1/namedentity", BASE);
+        public static final String POS_TAG = format("%s/v1/postag", BASE);
+        public static final String CHUNK_PARSE = format("%s/v1/chunkparse", BASE);
+        public static final String VERSION = format("%s/version", BASE);
     }
 
     protected HttpClient httpClient = HttpClient.DEFAULT;
@@ -43,6 +44,14 @@ public class Api {
         return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text))), SimpleSentiment.class);
     }
 
+    public SentenceSentiment[] classifySentenceSentiment(String text) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "sentence"))), SentenceSentiment[].class);
+    }
+
+    public WordSentiment[] classifyWordSentiment(String text) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "word"))), WordSentiment[].class);
+    }
+
     /**
      * Classifies sentiment for each detected entity in the passed-in text.
      *
@@ -59,6 +68,14 @@ public class Api {
 
     public EntitySentiment[] classifyEntitySentiment(String text, String targets, String matching) {
         return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entity", targets, matching))), EntitySentiment[].class);
+    }
+
+    public AggregateEntitySentiment[] classifyAggregatedEntitySentiment(String text) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entityaggregate"))), AggregateEntitySentiment[].class);
+    }
+
+    public TaxonomyEntitySentiment[] classifyTaxonomyEntitySentiment(String text) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entitytaxonomy"))), TaxonomyEntitySentiment[].class);
     }
 
     public Speculation[] classifySpeculation(String text) {
@@ -87,6 +104,10 @@ public class Api {
 
     public ChunkConstituent[] chunkParse(String text) {
         return fromJson(httpClient.post(Path.CHUNK_PARSE, headers(), toJson(new Request(text))), ChunkConstituent[].class);
+    }
+
+    public Version getAPIVersion() {
+        return fromJson(httpClient.get(Path.VERSION, headers()), Version.class);
     }
 
     protected Map<String, String> headers() {

@@ -1,10 +1,10 @@
 package io.theysay.client.api;
 
 public class SimpleSentiment {
-    private SentimentValues sentiment;
+    private SentimentScore sentiment;
     private Integer wordCount;
 
-    public SentimentValues getSentiment() {
+    public SentimentScore getSentiment() {
         return sentiment;
     }
 

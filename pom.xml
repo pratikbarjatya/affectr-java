@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <name>affectr-java</name>
     <url>https://theysay.io</url>
-    <description>TheySay Affectr Java Client Library</description>
+    <description>TheySay AffectR Java Client Library</description>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>

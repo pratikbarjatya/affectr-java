@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class EntitySentiment implements HasStartEnd, HasText {
+public class AggregatedEntity implements HasStartEnd, HasText {
     private SentimentScore sentiment;
     private int start;
     private int end;
