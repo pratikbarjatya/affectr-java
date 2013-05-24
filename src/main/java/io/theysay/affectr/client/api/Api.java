@@ -41,15 +41,27 @@ public class Api {
      * @return a SimpleSentiment object
      */
     public SimpleSentiment classifySentiment(String text) {
-        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text))), SimpleSentiment.class);
+        return classifySentiment(text, null);
+    }
+
+    public SimpleSentiment classifySentiment(String text, SentimentBias bias) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, bias))), SimpleSentiment.class);
     }
 
     public SentenceSentiment[] classifySentenceSentiment(String text) {
-        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "sentence"))), SentenceSentiment[].class);
+        return classifySentenceSentiment(text, null);
+    }
+
+    public SentenceSentiment[] classifySentenceSentiment(String text, SentimentBias bias) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "sentence", bias))), SentenceSentiment[].class);
     }
 
     public WordSentiment[] classifyWordSentiment(String text) {
-        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "word"))), WordSentiment[].class);
+        return classifyWordSentiment(text, null);
+    }
+
+    public WordSentiment[] classifyWordSentiment(String text, SentimentBias bias) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "word", bias))), WordSentiment[].class);
     }
 
     /**
@@ -59,23 +71,43 @@ public class Api {
      * @return an EntitySentiment object for each entity
      */
     public EntitySentiment[] classifyEntitySentiment(String text) {
-        return classifyEntitySentiment(text, null, null);
+        return classifyEntitySentiment(text, null, null, null);
+    }
+
+    public EntitySentiment[] classifyEntitySentiment(String text, SentimentBias bias) {
+        return classifyEntitySentiment(text, null, null, bias);
     }
 
     public EntitySentiment[] classifyEntitySentiment(String text, String targets) {
-        return classifyEntitySentiment(text, targets, null);
+        return classifyEntitySentiment(text, targets, null, null);
+    }
+
+    public EntitySentiment[] classifyEntitySentiment(String text, String targets, SentimentBias bias) {
+        return classifyEntitySentiment(text, targets, null, bias);
     }
 
     public EntitySentiment[] classifyEntitySentiment(String text, String targets, String matching) {
-        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entity", targets, matching))), EntitySentiment[].class);
+        return classifyEntitySentiment(text, targets, matching, null);
+    }
+
+    public EntitySentiment[] classifyEntitySentiment(String text, String targets, String matching, SentimentBias bias) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entity", targets, matching, bias))), EntitySentiment[].class);
     }
 
     public AggregateEntitySentiment[] classifyAggregatedEntitySentiment(String text) {
-        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entityaggregate"))), AggregateEntitySentiment[].class);
+        return classifyAggregatedEntitySentiment(text, null);
+    }
+
+    public AggregateEntitySentiment[] classifyAggregatedEntitySentiment(String text, SentimentBias bias) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entityaggregate", bias))), AggregateEntitySentiment[].class);
     }
 
     public TaxonomyEntitySentiment[] classifyTaxonomyEntitySentiment(String text) {
-        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entitytaxonomy"))), TaxonomyEntitySentiment[].class);
+        return classifyTaxonomyEntitySentiment(text, null);
+    }
+
+    public TaxonomyEntitySentiment[] classifyTaxonomyEntitySentiment(String text, SentimentBias bias) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entitytaxonomy", bias))), TaxonomyEntitySentiment[].class);
     }
 
     public Speculation[] classifySpeculation(String text) {

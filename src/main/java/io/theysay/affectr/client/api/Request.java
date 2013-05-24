@@ -25,10 +25,15 @@ public class Request {
         this.ratio = ratio;
     }
 
-    public Request(String text, String level, String targets) {
+    public Request(String text, SentimentBias bias) {
+        this.text = text;
+        this.bias = bias;
+    }
+
+    public Request(String text, String level, SentimentBias bias) {
         this.text = text;
         this.level = level;
-        this.targets = targets;
+        this.bias = bias;
     }
 
     public Request(String text, String level, String targets, String matching) {
