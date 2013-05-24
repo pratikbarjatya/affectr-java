@@ -30,7 +30,7 @@ Add this dependency to your .sbt or build file:
 First, import the required classes:
 
 ```java
-import io.theysay.client.AffectR;
+import io.theysay.affectr.client.AffectR;
 ```
 
 Next, set your account details:
