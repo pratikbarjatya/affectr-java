@@ -1,8 +1,6 @@
 package io.theysay.client.api;
 
-import java.io.Serializable;
-
-public class SimpleSentiment implements Serializable {
+public class SimpleSentiment {
     private SentimentValues sentiment;
     private Integer wordCount;
 

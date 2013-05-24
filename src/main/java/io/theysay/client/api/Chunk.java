@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class Chunk implements HasStartEnd {
+public class Chunk implements HasStartEnd, HasText {
     private String chunkType;
     private int start;
     private int end;

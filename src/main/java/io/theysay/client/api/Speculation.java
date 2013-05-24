@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class Speculation {
+public class Speculation implements HasStartEnd, HasText {
     private int start;
     private int end;
     private int sentenceIndex;

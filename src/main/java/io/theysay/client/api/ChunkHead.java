@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class ChunkHead {
+public class ChunkHead implements HasText {
     private String posTag;
     private String posTaggedWord;
     private String stem;

@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class Comparison {
+public class Comparison implements HasStartEnd, HasText {
     private int start;
     private int end;
     private int sentenceIndex;

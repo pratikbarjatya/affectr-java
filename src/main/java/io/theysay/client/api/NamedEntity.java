@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class NamedEntity {
+public class NamedEntity implements HasStartEnd {
     private String head;
     private int headIndex;
     private int start;

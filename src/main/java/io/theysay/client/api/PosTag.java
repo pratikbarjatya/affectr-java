@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class PosTag {
+public class PosTag implements HasText {
     private String posTag;
     private String posTaggedWord;
     private String sentenceIndex;

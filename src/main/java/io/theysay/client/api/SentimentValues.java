@@ -1,8 +1,6 @@
 package io.theysay.client.api;
 
-import java.io.Serializable;
-
-public class SentimentValues implements Serializable {
+public class SentimentValues {
     private String label;
     private double positive;
     private double negative;

@@ -1,6 +1,6 @@
 package io.theysay.client.api;
 
-public class EntitySentiment {
+public class EntitySentiment implements HasStartEnd, HasText {
     private SentimentValues sentiment;
     private int start;
     private int end;
