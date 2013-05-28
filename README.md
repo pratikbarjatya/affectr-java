@@ -1,4 +1,4 @@
-TheySay AffectR API Java Client
+TheySay AffectR API Java Client [![Build Status](https://travis-ci.org/theysay/affectr-java.png)](https://travis-ci.org/theysay/affectr-java)
 ===============================
 
 The TheySay AffectR API Java client provides a simple interface to the [TheySay API](http://api.theysay.io).
