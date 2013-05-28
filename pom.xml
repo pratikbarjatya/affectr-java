@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.theysay</groupId>
     <artifactId>affectr-java</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>affectr-java</name>
     <url>https://theysay.io</url>
@@ -15,9 +15,9 @@
     </parent>
 
     <scm>
-        <url>https://github.com/theysay/affectr-java-client</url>
-        <connection>scm:git:git://github.com/theysay/affectr-java-client.git</connection>
-        <developerConnection>scm:git:git@github.com:theysay/affectr-java-client.git</developerConnection>
+        <url>https://github.com/theysay/affectr-java</url>
+        <connection>scm:git:git://github.com/theysay/affectr-java.git</connection>
+        <developerConnection>scm:git:git@github.com:theysay/affectr-java.git</developerConnection>
     </scm>
 
     <properties>
