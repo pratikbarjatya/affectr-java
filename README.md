@@ -65,7 +65,7 @@ String posTag = AffectR.api.posTag("...")[0].getPosTaggedWord();
 
 ### Using or moving to Scala?
 
-Try our [Scala client](https://github.com/theysay/affectr-scala-client).
+Try our [Scala client](https://github.com/theysay/affectr-scala).
 
 For more information, please visit http://docs.theysay.apiary.io/. This client is under development.
 
