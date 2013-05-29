@@ -1,7 +1,7 @@
 TheySay AffectR API Java Client [![Build Status](https://travis-ci.org/theysay/affectr-java.png)](https://travis-ci.org/theysay/affectr-java)
 ===============================
 
-The TheySay AffectR API Java client provides a simple interface to the [TheySay API](http://api.theysay.io).
+The TheySay AffectR API Java client provides a simple interface to the [TheySay AffectR API](http://api.theysay.io).
 
 You can sign up for a TheySay AffectR API account at http://theysay.io.
 
@@ -27,7 +27,7 @@ Add this dependency to your .sbt or build file:
 
 ### Getting Started
 
-First, import the required classes:
+First, import the AffectR class:
 
 ```java
 import io.theysay.affectr.client.AffectR;
