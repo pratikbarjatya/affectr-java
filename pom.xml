@@ -5,8 +5,8 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>affectr-java</name>
-    <url>https://theysay.io</url>
-    <description>TheySay AffectR Java Client Library</description>
+    <url>http://www.theysay.io</url>
+    <description>TheySay AffectR Java client</description>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -19,6 +19,12 @@
         <connection>scm:git:git://github.com/theysay/affectr-java.git</connection>
         <developerConnection>scm:git:git@github.com:theysay/affectr-java.git</developerConnection>
     </scm>
+    <developers>
+        <developer>
+            <id>analytically</id>
+            <name>Mathias Bogaert</name>
+        </developer>
+    </developers>
 
     <properties>
         <github.global.server>github</github.global.server>
@@ -59,6 +65,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
@@ -67,6 +74,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -79,6 +87,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -129,6 +138,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.6</version>
                 <configuration>
                     <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                     <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
@@ -137,25 +147,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
             </plugin>
         </plugins>
     </reporting>
 
     <dependencies>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
-        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.7</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.8.3</version>
+            <version>1.8</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
