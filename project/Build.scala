@@ -7,12 +7,19 @@ object Build extends sbt.Build {
   lazy val root = Project(id = "affectr-java", base = file("."), settings = Project.defaultSettings).settings(
     version := buildVersion,
     organization := "io.theysay",
+    organizationName := "TheySay Ltd",
+    organizationHomepage := Some(new URL("http://www.theysay.io")),
+    description := "TheySay AffectR API Java Client",
+    startYear := Some(2013),
     resolvers += Resolver.typesafeRepo("releases"),
     parallelExecution in Test := false,
     testOptions += Tests.Argument(TestFrameworks.JUnit, "-q", "-v"),
+
     libraryDependencies += "commons-codec" % "commons-codec" % "1.8",
     libraryDependencies += "com.google.code.gson" % "gson" % "2.2.4",
+
     crossPaths := false,
+    autoScalaLibrary := false,
     publishMavenStyle := true,
     publishTo <<= version {
       v: String =>
