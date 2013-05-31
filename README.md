@@ -11,7 +11,7 @@ Java 6 or later.
 
 ### Using with Maven
 
-Add this dependency to your project's POM:
+Add this dependency to your project's POM file:
 
     <dependency>
       <groupId>io.theysay</groupId>
@@ -21,7 +21,7 @@ Add this dependency to your project's POM:
 
 ### Using with SBT
 
-Add this dependency to your .sbt or build file:
+Add this dependency to your `build.sbt` or `project/Build.scala` file:
 
     "io.theysay" % "affectr-java" % "1.0.0"
 
