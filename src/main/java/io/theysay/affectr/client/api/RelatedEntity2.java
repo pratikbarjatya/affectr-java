@@ -9,23 +9,11 @@ public class RelatedEntity2 {
         return head;
     }
 
-    public void setHead(String head) {
-        this.head = head;
-    }
-
     public int getHeadIndex() {
         return headIndex;
     }
 
-    public void setHeadIndex(int headIndex) {
-        this.headIndex = headIndex;
-    }
-
     public String getText() {
         return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 }

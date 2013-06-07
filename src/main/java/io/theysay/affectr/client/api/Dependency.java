@@ -8,15 +8,7 @@ public class Dependency {
         return predicate;
     }
 
-    public void setPredicate(String predicate) {
-        this.predicate = predicate;
-    }
-
     public String getRelation() {
         return relation;
-    }
-
-    public void setRelation(String relation) {
-        this.relation = relation;
     }
 }
