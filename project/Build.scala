@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 object Build extends sbt.Build {
-  lazy val buildVersion = "1.0.0"
+  lazy val buildVersion = "1.0.1"
 
   lazy val root = Project(id = "affectr-java", base = file("."), settings = Project.defaultSettings).settings(
     version := buildVersion,

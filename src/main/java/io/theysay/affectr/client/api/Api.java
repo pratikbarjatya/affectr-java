@@ -22,6 +22,7 @@ public class Api {
         public static final String COMPARISON = format("%s/v1/comparison", BASE);
         public static final String NAMED_ENTITY = format("%s/v1/namedentity", BASE);
         public static final String POS_TAG = format("%s/v1/postag", BASE);
+        public static final String DEPENDENCY_PARSE = format("%s/v1/depparse", BASE);
         public static final String CHUNK_PARSE = format("%s/v1/chunkparse", BASE);
         public static final String VERSION = format("%s/version", BASE);
     }
@@ -110,6 +111,14 @@ public class Api {
         return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entitytaxonomy", bias))), TaxonomyEntitySentiment[].class);
     }
 
+    public EntityRelationSentiment[] classifyEntityRelationSentiment(String text) {
+        return classifyEntityRelationSentiment(text, null);
+    }
+
+    public EntityRelationSentiment[] classifyEntityRelationSentiment(String text, SentimentBias bias) {
+        return fromJson(httpClient.post(Path.SENTIMENT, headers(), toJson(new Request(text, "entityrelation", bias))), EntityRelationSentiment[].class);
+    }
+
     public Speculation[] classifySpeculation(String text) {
         return fromJson(httpClient.post(Path.SPECULATION, headers(), toJson(new Request(text))), Speculation[].class);
     }
@@ -132,6 +141,10 @@ public class Api {
 
     public PosTag[] posTag(String text) {
         return fromJson(httpClient.post(Path.POS_TAG, headers(), toJson(new Request(text))), PosTag[].class);
+    }
+
+    public DependencyParse[] dependencyParse(String text) {
+        return fromJson(httpClient.post(Path.DEPENDENCY_PARSE, headers(), toJson(new Request(text))), DependencyParse[].class);
     }
 
     public ChunkConstituent[] chunkParse(String text) {

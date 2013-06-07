@@ -16,14 +16,14 @@ Add this dependency to your project's POM file:
     <dependency>
       <groupId>io.theysay</groupId>
       <artifactId>affectr-java</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
 
 ### Using with SBT
 
 Add this dependency to your `build.sbt` or `project/Build.scala` file:
 
-    "io.theysay" % "affectr-java" % "1.0.0"
+    "io.theysay" % "affectr-java" % "1.0.1"
 
 ### Getting Started
 
