@@ -3,7 +3,7 @@ package io.theysay.affectr.client.api;
 public class PosTag implements HasText {
     private String posTag;
     private String posTaggedWord;
-    private String sentenceIndex;
+    private int sentenceIndex;
     private String stem;
     private String text;
     private int wordIndex;
@@ -16,7 +16,7 @@ public class PosTag implements HasText {
         return posTaggedWord;
     }
 
-    public String getSentenceIndex() {
+    public int getSentenceIndex() {
         return sentenceIndex;
     }
 
