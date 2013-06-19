@@ -17,7 +17,7 @@ Add this dependency to your project's POM file:
 <dependency>
   <groupId>io.theysay</groupId>
   <artifactId>affectr-java</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
@@ -26,7 +26,7 @@ Add this dependency to your project's POM file:
 Add this dependency to your `build.sbt` or `project/Build.scala` file:
 
 ```scala
-libraryDependencies += "io.theysay" % "affectr-java" % "1.0.1"
+libraryDependencies += "io.theysay" % "affectr-java" % "1.0.2"
 ```
 
 ### Getting Started
