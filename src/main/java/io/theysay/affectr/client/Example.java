@@ -8,7 +8,7 @@ public class Example {
         AffectR.accountDetails.setPassword("your password");
 
         Version version = AffectR.api.getVersion();
-        System.out.println(String.format("TheySay AffectR API version %s, built on %s", version.getVersion(), version.getBuildDate()));
+        System.out.println(String.format("Remote version: TheySay AffectR API version %s, built on %s", version.getVersion(), version.getBuildDate()));
 
         // chunk parse
         System.out.println(AffectR.api.chunkParse(
