@@ -67,6 +67,12 @@ String head = AffectR.api.getNamedEntities("...")[0].getHead();
 String posTag = AffectR.api.posTag("...")[0].getPosTaggedWord();
 ```
 
+### Using or moving to Scala?
+
+Try our [Scala client](https://github.com/theysay/affectr-scala).
+
+For more information, please visit http://docs.theysay.apiary.io/. This client is under development.
+
 ### Versioning
 
 For transparency and insight into our release cycle, and for striving to maintain backward compatibility, this project
@@ -83,11 +89,5 @@ And constructed with the following guidelines:
 * Bug fixes and misc changes bumps the patch
 
 For more information on SemVer, please visit http://semver.org/.
-
-### Using or moving to Scala?
-
-Try our [Scala client](https://github.com/theysay/affectr-scala).
-
-For more information, please visit http://docs.theysay.apiary.io/. This client is under development.
 
 Copyright 2013 TheySay Ltd. All rights reserved.
