@@ -1,8 +1,29 @@
-.DS_Store
+# SBT
+boot/
+lib_managed/
+src_managed/
+test-output/
+target/
+.history
+
+# IntelliJ
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.cache
 .classpath
 .project
+.scala_dependencies
 .settings
-target
-pom.xml.releaseBackup
-release.properties
-*~
+.target/
+
+# Mac
+.DS_Store
+
+# Other
+*.pyc

@@ -1,7 +1,5 @@
 package io.theysay.affectr.client.api;
 
-import io.theysay.affectr.client.RelatedEntity1;
-
 public class EntityRelationSentiment {
     private RelatedEntity1 entity1;
     private RelatedEntity2 entity2;

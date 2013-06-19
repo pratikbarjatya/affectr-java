@@ -1,4 +1,4 @@
-package io.theysay.affectr.client;
+package io.theysay.affectr.client.api;
 
 public class RelatedEntity1 {
     private String head;
