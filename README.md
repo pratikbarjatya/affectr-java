@@ -90,6 +90,8 @@ And constructed with the following guidelines:
 
 For more information on SemVer, please visit http://semver.org/.
 
+### License
+
 Copyright 2013 TheySay Ltd. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
