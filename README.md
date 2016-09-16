@@ -71,7 +71,7 @@ String posTag = AffectR.api.posTag("...")[0].getPosTaggedWord();
 
 Try our [Scala client](https://github.com/theysay/affectr-scala).
 
-For more information, please visit http://docs.theysay.apiary.io/. This client is under development.
+For more information, please visit http://docs.theysay.apiary.io/
 
 ### Versioning
 
@@ -92,7 +92,7 @@ For more information on SemVer, please visit http://semver.org/.
 
 ### License
 
-Copyright 2013 TheySay Ltd. All rights reserved.
+Copyright 2016 TheySay Ltd. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
