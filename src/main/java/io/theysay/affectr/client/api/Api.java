@@ -1,5 +1,7 @@
 package io.theysay.affectr.client.api;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import io.theysay.affectr.client.AccountDetails;
 import io.theysay.affectr.client.utils.HttpClient;
 import org.apache.commons.codec.binary.Base64;
@@ -19,6 +21,7 @@ public class Api {
         public static final String SPECULATION = format("%s/v1/speculation", BASE);
         public static final String INTENT = format("%s/v1/intent", BASE);
         public static final String RISK = format("%s/v1/risk", BASE);
+        public static final String EMOTION = format("%s/v1/emotion", BASE);
         public static final String COMPARISON = format("%s/v1/comparison", BASE);
         public static final String NAMED_ENTITY = format("%s/v1/namedentity", BASE);
         public static final String POS_TAG = format("%s/v1/postag", BASE);
@@ -131,6 +134,12 @@ public class Api {
         return fromJson(httpClient.post(Path.RISK, headers(), toJson(new Request(text))), Risk[].class);
     }
 
+    public Emotion[] classifyEmotion(String text) {
+        JsonObject responseObj = fromJson(httpClient.post(Path.EMOTION, headers(), toJson(new Request(text))), JsonElement.class).getAsJsonObject();
+        String json = toJson(responseObj.getAsJsonArray("emotions"));
+        return fromJson(json, Emotion[].class);
+    }
+    
     public Comparison[] classifyComparison(String text) {
         return fromJson(httpClient.post(Path.COMPARISON, headers(), toJson(new Request(text))), Comparison[].class);
     }
@@ -152,7 +161,14 @@ public class Api {
     }
 
     public Version getVersion() {
-        return fromJson(httpClient.get(Path.VERSION, headers()), Version.class);
+        // Typically {"Preceive-API":{"version":"x.y.z"},"AffectR-Engine":{"version":"x.y.z"}}
+        JsonObject responseObj = fromJson(httpClient.get(Path.VERSION, headers()), JsonElement.class).getAsJsonObject();
+        JsonObject jsonObj = responseObj.getAsJsonObject("Preceive-API");
+        String engineVersion = responseObj.getAsJsonObject("AffectR-Engine").get("version").toString();
+        jsonObj.addProperty("name","Preceive-API");
+        jsonObj.addProperty("engineVersion", engineVersion);
+        String json = toJson(jsonObj);
+        return fromJson(json, Version.class);
     }
 
     protected Map<String, String> headers() {
